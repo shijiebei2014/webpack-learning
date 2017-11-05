@@ -1,0 +1,14 @@
+body {
+	/*
+	* 与url的配置有关,如果为false,不解析;反之,要被当作资源解析(网络资源或是alias),才会跟root有关系
+	*/
+	/*background-image: url('/src/images/background.png');*/
+	background-image: url('/src/images/background.png');
+}
+
+p {
+    color: red;
+}
+.hello {
+	color: green;
+}
