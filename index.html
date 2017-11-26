@@ -5,9 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!-- <script src="https://unpkg.com/vue" type="text/javascript"></script> -->
+    <script src="./src/scripts/vue.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Vue.component('todo-item', {
+            template: '\
+                <li>\
+                    {{title}}\
+                    <button v-on:click="$emit(\'remove2\')">X</button>\
+                </li>\
+            ',
+            props: ['title']
+        })
+    </script>
+    <style type="text/css">
+        .red {color: red;}
+    </style>
 </head>
 <body>
-    <p>awesome</p>
-    <script src="./bundle.js" type="text/javascript"></script>
+    <div id="app">
+        <span v-bind:class="classObj">{{reverseMessage}}</span>
+        <input type="text" v-model="message">
+        <input type="number" v-model.number="num">
+        <template v-if="ok">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+    </div>
+
+    <div id="todo-list-example">
+        <input type="text" v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
+        <ul>
+            <li 
+              is="todo-item"
+              v-for="(todo, index) in todos"
+              :key="todo.id"
+              :title="todo.title"
+              @remove2="todos.splice(index, 1)"></li>
+        </ul>
+    </div>
+    <!-- <p>awesome</p> -->
+    <!-- <script src="./dist/bundle.js" type="text/javascript"></script> -->
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                num: 0,
+                classObj: {
+                    red: true
+                },
+                ok: true
+            },
+            computed: {
+                reverseMessage: function() {
+                     return this.message.split('').reverse().join('')
+                }
+            }
+        })
+
+        var todo_list_example = new Vue({
+            el: '#todo-list-example',
+            data: {
+                newTodoText: '',
+                todos: [{
+                    id: 1,
+                    title: 'todo 1'
+                }, {
+                    id: 2,
+                    title: 'todo 2'
+                }, {
+                    id: 3,
+                    title: 'todo 3'
+                }],
+                nextTodoId: 3
+            },
+            methods: {
+                addNewTodo: function() {
+                    this.todos.push({
+                        title: this.newTodoText,
+                        id: this.nextTodoId++
+                    })
+                    this.newTodoText = ''
+                }
+            }
+        })
+    </script>
 </body>
 </html>
