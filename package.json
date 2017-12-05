@@ -7,27 +7,32 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "webpack",
         "watch": "webpack --watch",
-        "start": "webpack-dev-server --env development",
-        "lint": "eslint src --fix"
+        "start": "webpack-dev-server --env development"
     },
     "author": "xqq",
     "license": "ISC",
     "devDependencies": {
-        "babel-core": "^6.26.0",
-        "babel-loader": "^7.1.2",
-        "babel-preset-env": "^1.6.1",
         "clean-webpack-plugin": "^0.1.17",
         "css-loader": "^0.28.7",
-        "eslint": "^4.10.0",
         "extract-text-webpack-plugin": "^3.0.2",
         "file-loader": "^1.1.5",
         "glob": "^7.1.2",
         "html-webpack-plugin": "^2.30.1",
-        "jshint": "^2.9.5",
         "purify-css": "^1.2.5",
         "purifycss-webpack": "^0.7.0",
         "style-loader": "^0.19.0",
+        "url-loader": "^0.6.2",
         "webpack": "^3.8.1",
         "webpack-dev-server": "^2.9.4"
+    },
+    "dependencies": {
+        "browserify": "^14.5.0",
+        "gulp": "^3.9.1",
+        "gulp-sourcemaps": "^2.6.1",
+        "gulp-util": "^3.0.8",
+        "lodash.assign": "^4.2.0",
+        "vinyl-buffer": "^1.0.0",
+        "vinyl-source-stream": "^1.1.0",
+        "watchify": "^3.9.0"
     }
 }
