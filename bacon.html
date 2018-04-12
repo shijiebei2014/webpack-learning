@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script src="./src/scripts/Bacon.js"></script>
+    <script src="./src/scripts/bacon.ui.js"></script>
+    <title>Bacon 测试</title>
+</head>
+
+<body>
+    <div id="case1">
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <span id="result">0</span>
+    </div>
+
+    <div id="case2">
+        <form action="">
+            <label for="username">username</label> <br>
+            <input type="text" name="username" id="username"> <br>
+
+            <label for="fullname">fullname</label> <br>
+            <input type="text" name="fullname" id="fullname"> <br>
+
+            <input type="submit" />
+        </form>
+    </div>
+
+    <div id="case3">
+        <ul id="events"></ul>
+    </div>
+
+    <div id="case4">
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>名称</th>
+                    <th>操作</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>物品1</td>
+                    <td><button class="remove" data-id="1">删除</button><button class="add" data-id="1">添加</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>物品2</td>
+                    <td><button class="remove" data-id="2">删除</button><button class="add" data-id="2">添加</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="./src/scripts/bacon.html.js"></script>
+</body>
+
+</html>
